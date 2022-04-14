@@ -13,8 +13,8 @@ public interface IPlace extends Comparable<IPlace> {
 
     String getName(); // return the name of the place
 
-    double getLatitude(); // return the latitude of the place
+    int getX(); // return the latitude of the place
 
-    double getLongitude(); // return the longitude of the place
+    int getY(); // return the longitude of the place
 
 }
