@@ -6,6 +6,6 @@ public interface IGPSBackend {
 	//and assigns it to campusMap, should be implemented
 	
 	// this methods uses the dijkstra algorithm to find the shortest path
-	public List<ILocation> shortestPathFinder(ILocation start, ILocation end);
+	public List<IPlace> shortestPathFinder(IPlace start, IPlace end);
 
 }
