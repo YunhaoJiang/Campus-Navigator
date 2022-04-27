@@ -1,5 +1,6 @@
 import java.util.List;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public interface IGPSFrontend {
 
@@ -22,21 +23,15 @@ public interface IGPSFrontend {
    * Method that will display the shortest path (calculated through backend) from point A to B and
    * display it on JavaFX
    */
-  public void displayPath();
+  public String displayPath();
   
   /**
    * Method that runs when a button is clicked
    */
-  public void buttonClicked();
+  public void buttonClicked(Button button, IPlace place);
   
-  /**
-   * Method that is called when the user inserts a new location
-   * @param locName name of the new location
-   */
-  public void insertNew(String locName);
-
   /**
    * Will contain all JavaFX code
    */
-  public void start();
+  public void start(Stage stage);
 }
