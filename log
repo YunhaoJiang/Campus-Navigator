@@ -1,0 +1,58 @@
+Script started on 2022-04-27 23:23:29+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="211" LINES="60"]
+]0;javid2@cs400vm: ~/Project3_BU_redjavid2@cs400vm:~/Project3_BU_red$ git status
+On branch BackendDeveloper
+Your branch is ahead of 'origin/BackendDeveloper' by 8 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mlog[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+]0;javid2@cs400vm: ~/Project3_BU_redjavid2@cs400vm:~/Project3_BU_red$ git log -1
+[?1h=[33mcommit fa2e18c341782cea4bd12528f8d3b3d7fa3fb376[m[33m ([m[1;36mHEAD -> [m[1;32mBackendDeveloper[m[33m)[m[m
+Author: Mojtaba Javid <javid2@wics.edu>[m
+Date:   Wed Apr 27 23:22:38 2022 +0000[m
+[m
+    all done[m
+[K[?1l>]0;javid2@cs400vm: ~/Project3_BU_redjavid2@cs400vm:~/Project3_BU_red$ make clean
+rm *.class
+rm: cannot remove '*.class': No such file or directory
+make: *** [Makefile:8: clean] Error 1
+]0;javid2@cs400vm: ~/Project3_BU_redjavid2@cs400vm:~/Project3_BU_red$ ls
+BDPHGPSAlgorithm.java  BackendDeveloperTests.java  GPSBackend.java  IGPSAlgorithm.java  IGPSFrontend.java  IPlaceLoader.java  [0m[01;31mjunit5.jar[0m
+BDPHPlace.java         CampusGPSApp.java           GraphADT.java    IGPSBackend.java    IPlace.java        Makefile           log
+]0;javid2@cs400vm: ~/Project3_BU_redjavid2@cs400vm:~/Project3_BU_red$ make runTests
+javac -cp .:junit5.jar BackendDeveloperTests.java -Xlint
+java -jar junit5.jar --class-path . --scan-classpath -n BackendDeveloperTests
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mBackendDeveloperTests[0m [32m✔[0m
+[36m│     ├─[0m [34mtest1()[0m [32m✔[0m
+[36m│     ├─[0m [34mtest2()[0m [32m✔[0m
+[36m│     ├─[0m [34mtest3()[0m [32m✔[0m
+[36m│     ├─[0m [34mtest4()[0m [32m✔[0m
+[36m│     └─[0m [34mtest5()[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 231 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         5 tests found           ]
+[         0 tests skipped         ]
+[         5 tests started         ]
+[         0 tests aborted         ]
+[         5 tests successful      ]
+[         0 tests failed          ]
+
+]0;javid2@cs400vm: ~/Project3_BU_redjavid2@cs400vm:~/Project3_BU_red$ exit
+exit
+
+Script done on 2022-04-27 23:24:34+00:00 [COMMAND_EXIT_CODE="0"]
