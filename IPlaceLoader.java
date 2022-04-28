@@ -17,6 +17,6 @@ public interface IPlaceLoader {
      * @return the array of places described in the tsv file
      * @throws FileNotFoundException if the filepath is not a tsv file or cannot be read
      */
-    IPlace loadPlaces(String filePath) throws FileNotFoundException;
+    List<IPlace> loadPlaces(String filePath) throws FileNotFoundException;
 
 }
