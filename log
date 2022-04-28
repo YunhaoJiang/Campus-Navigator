@@ -1,0 +1,58 @@
+Script started on Wed Apr 27 23:50:23 2022
+[1m[7m%[27m[1m[0m                                                                                                                                                                                     [0m[27m[24m[Jyunhao.jiang@Yunhaos-MacBook-Pro Project3_BU_red % [K[?2004hggit status[?2004l
+On branch AlgorithmEngineer
+Your branch is up to date with 'origin/AlgorithmEngineer'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mlog[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[1m[7m%[27m[1m[0m                                                                                                                                                                                     [0m[27m[24m[Jyunhao.jiang@Yunhaos-MacBook-Pro Project3_BU_red % [K[?2004hggit log -1[?2004l
+[?1h=[33mcommit 8188f8226167e44c532ce3b2e3fc02c488d5e236[m[33m ([m[1;36mHEAD -> [m[1;32mAlgorithmEngineer[m[33m, [m[1;31morigin/AlgorithmEngineer[m[33m)[m[m
+Author: Yunhao Jiang <jiang297@wisc.edu>[m
+Date:   Wed Apr 27 23:46:01 2022 -0500[m
+[m
+    Implement Map and AlgorithmEngineerTests[m
+[K[?1l>[1m[7m%[27m[1m[0m                                                                                                                                                                                     [0m[27m[24m[Jyunhao.jiang@Yunhaos-MacBook-Pro Project3_BU_red % [K[?2004hmmake clean[?2004l
+rm *.class
+rm: *.class: No such file or directory
+make: *** [clean] Error 1
+[1m[7m%[27m[1m[0m                                                                                                                                                                                     [0m[27m[24m[Jyunhao.jiang@Yunhaos-MacBook-Pro Project3_BU_red % [K[?2004hlls[?2004l
+AlgorithmEngineerTests.java	IGPSBackend.java		Makefile			javafx-sdk-17.0.2
+CS400Graph.java			IGPSFrontend.java		Map.java			junit5.jar
+GraphADT.java			IPlace.java			Place.java			log
+IGPSAlgorithm.java		IPlaceLoader.java		Project3_BU_red.iml		out
+[1m[7m%[27m[1m[0m                                                                                                                                                                                     [0m[27m[24m[Jyunhao.jiang@Yunhaos-MacBook-Pro Project3_BU_red % [K[?2004hmmake runTests[?2004l
+javac -cp .:junit5.jar AlgorithmEngineerTests.java
+java -jar junit5.jar --class-path . --scan-class-path -n AlgorithmEngineerTests
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  └─[0m [36mAlgorithmEngineerTests[0m [32m✔[0m
+[36m│     ├─[0m [34mtest1()[0m [32m✔[0m
+[36m│     ├─[0m [34mtest2()[0m [32m✔[0m
+[36m│     ├─[0m [34mtest3()[0m [32m✔[0m
+[36m│     ├─[0m [34mtest4()[0m [32m✔[0m
+[36m│     └─[0m [34mtest5()[0m [32m✔[0m
+[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
+
+Test run finished after 151 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         5 tests found           ]
+[         0 tests skipped         ]
+[         5 tests started         ]
+[         0 tests aborted         ]
+[         5 tests successful      ]
+[         0 tests failed          ]
+
+[1m[7m%[27m[1m[0m                                                                                                                                                                                     [0m[27m[24m[Jyunhao.jiang@Yunhaos-MacBook-Pro Project3_BU_red % [K[?2004heexit[?2004l
+
+Script done on Wed Apr 27 23:51:01 2022
