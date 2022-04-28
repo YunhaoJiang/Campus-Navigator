@@ -2,7 +2,7 @@
  * Instances of classes that implement this interface represents a place
  * that can be stored, sorted, and used with the accessors below.
  */
-public interface IPlace extends Comparable<IPlace> {
+public interface IPlace {
     /**
      * constructor args
      * Place(String name, double latitude, double longitude)
