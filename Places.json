@@ -1,9 +1,9 @@
 {
   "places": [
-    {"name": "Four Lakes Market", "x": 0.11768/*245*/, "y": 0.15520/*230*/},
-    {"name": "Carson's Market", "x": 0.35303/*735*/, "y": 0.19906/*295*/},
-    {"name": "Liz's Market", "x": 0.51873/*1080*/, "y": 0.22605/*335*/},
-    {"name": "Rheta's Market", "x": 0.71806/*1495*/, "y": 0.43522/*645*/},
-    {"name": "Gordon's Dining Hall", "x": 0.83093/*1730*/, "y": 0.62416/*925*/}
+    {"name": "Four Lakes Market", "x": 0.11768, "y": 0.15520},
+    {"name": "Carson's Market", "x": 0.35303, "y": 0.19906},
+    {"name": "Liz's Market", "x": 0.51873, "y": 0.22605},
+    {"name": "Rheta's Market", "x": 0.71806, "y": 0.43522},
+    {"name": "Gordon's Dining Hall", "x": 0.83093, "y": 0.62416}
   ]
 }
