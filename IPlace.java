@@ -13,4 +13,6 @@ public interface IPlace {
 
     String getName(); // return the name of the place
 
+    int getX(); // return the x coordinate of the place
+    int getY(); // return the y coordinate of the place
 }
