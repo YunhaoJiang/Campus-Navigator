@@ -1,33 +1,33 @@
+public class Place implements IPlace{
+  private String name;
+  private int x;
+  private int y;
 
+  public Place(String name, int x, int y) {
+    this.name = name;
+    this.x = x;
+    this.y = y;
+  }
 
-public class Place implements IPlace {
-    final private  String name;
-    private int X;
-    private int Y;
+  /**
+   * constructor args
+   * Place(String name, double latitude, double longitude)
+   * name - name of the place
+   * latitude - latitude of the place geographically
+   * longitude - longitude of the place geographically
+   */
+  @Override
+  public String getName() {
+    return this.name;
+  }
 
-    public Place(String name, int X, int Y) {
-        this.name = name;
-        this.X = X;
-        this.Y = Y;
-    }
+  @Override
+  public int getX() {
+    return this.x;
+  }
 
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public int getX() {
-        return this.X;
-    }
-
-    @Override
-    public int getY() {
-        return this.Y;
-    }
-
-
-
-
+  @Override
+  public int getY() {
+    return this.y;
+  }
 }
