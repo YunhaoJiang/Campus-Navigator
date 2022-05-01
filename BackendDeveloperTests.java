@@ -10,9 +10,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 public class BackendDeveloperTests {
 	GPSBackend backend = new GPSBackend();
@@ -131,6 +134,64 @@ public class BackendDeveloperTests {
     	t = t+"]";
     	
         assertEquals("[afd]", t);
+    }
+    
+    
+    
+    /**
+     * additional test 1, testing the functionality
+     * of the code when working with others code 
+     */
+    @Test
+    public void testA1() {
+        backend.map.removeEdge(B, E);
+        boolean thrown = false;
+        try {
+        	backend.map.dijkstrasShortestPath(C, E);
+          } catch (NoSuchElementException e) {
+            thrown = true;
+          }
+
+          assertTrue(thrown); //no path
+    }
+    
+    /**
+     * additional test 2, testing the functionality
+     * of the code when working with others code 
+     */
+    @Test
+    public void testA2() {
+    	backend.map.insertEdge(E,B,3);
+    	assertTrue(backend.map.getPathCost(D , B) == 6);
+    	backend.map.removeVertex(E);
+    	backend.map.insertEdge(D,C,5);
+    	assertTrue(backend.map.getPathCost(D , B) == 8);
+        
+    }
+    
+    /**
+     * additional test 3, testing the functionality
+     * of the Algorithm Engineer's code 
+     */
+    @Test
+    public void testA3() {
+    	assertTrue(a.dijkstrasShortestPath(F, B).distance == 6);
+        assertTrue(a.dijkstrasShortestPath(C, E).distance == 4);
+        a.removeEdge(B, E);
+        assertTrue(a.dijkstrasShortestPath(C, E).distance == 5);
+    }
+    
+    /**
+     * additional test 4, testing the functionality
+     * of the Algorithm Engineer's code 
+     */
+    @Test
+    public void testA4() {
+    	assertTrue(a.getPathCost(C , B) == 3);
+    	a.removeEdge(C, B);
+    	a.insertEdge(E,B,3);
+    	assertTrue(a.getPathCost(C , B) == 8);
+    	
     }
     
 }
