@@ -12,17 +12,18 @@ public class CampusGPSApp {
 
 	public static void main(String[] args) {
 		IPlaceLoader loader = new PlaceLoader(); //new Loader();
-	    List<GPSAlgorithm.Vertex> places = null;
+	    List<IPlace> places = null;
 	    try {
-	      places = loader.loadPlaces("tv_shows.csv");
+	      places = loader.loadPlaces("Places.json");
 	    } catch (FileNotFoundException e) {
 	      System.out.println("Error File Not Found");
 	      e.printStackTrace();
 	    }
-	    IGPSBackend backend = new GPSBackend(); //new Backend();
-	    for(GPSAlgorithm.Vertex place : places) backend.addPlace(place);
-	    IGPSFrontend frontend = new GPSFrontend(backend); //new Frontend(backend);
-	    frontend.start();
+	    GPSBackend backend = new GPSBackend(); //new Backend();
+	    for(IPlace place : places) backend.map.automaticInsertEdge(place);
+	    GPSFrontend frontend = new GPSFrontend(); //new Frontend(backend);
+	    frontend.setBackend(backend);
+	    frontend.main(args);
 	}
 
 }

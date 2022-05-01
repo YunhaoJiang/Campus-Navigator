@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class GPSBackend implements IGPSBackend{
-	BDPHGPSAlgorithm map;
+	protected Map map;
 
     public GPSBackend() {
-            this.map = new BDPHGPSAlgorithm();}
+            this.map = new Map();}
 
     /**
      * Method that adds a new place to the database
@@ -21,7 +21,7 @@ public class GPSBackend implements IGPSBackend{
      * @param place, edgeList to be added and connected in the graph
      */
 	@Override
-	public void addPlace(IPlace place, LinkedList<BDPHGPSAlgorithm.Edge> edgeList) {
+	public void addPlace(IPlace place, LinkedList<Map.Edge> edgeList) {
 		if(place == null || edgeList == null) return;
 		map.insertVertex(place);
 		for(int i=0; i<edgeList.size(); i++) {
@@ -30,8 +30,12 @@ public class GPSBackend implements IGPSBackend{
 	}
 	
 	//overloading method for add which takes an vertex as param
-	public void addPlace(BDPHGPSAlgorithm.Vertex place) {
+	public void addPlace(Map.Vertex place) {
 		this.addPlace(place.data, place.edgesLeaving);}
+	
+	//overloading method for add which takes an vertex as param
+		public void addPlace(IPlace place) {
+			this.map.automaticInsertEdge(place);}
 
 	/**
      * Returns the shortest path between start and end.
