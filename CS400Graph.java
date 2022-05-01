@@ -379,7 +379,7 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Returns the cost of the path (sum over edge weights) between start and end.
-   * Uses Dijkstra's shortest path algorithm to find the shortest path.
+   * Uses Dijkstra's shortest path algorithm to find the shortest path..
    *
    * @param start the data item in the starting vertex for the path
    * @param end   the data item in the end vertex for the path
