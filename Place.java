@@ -1,7 +1,7 @@
 public class Place implements IPlace{
-  private String name;
-  private int x;
-  private int y;
+  private final String name;
+  private final int x;
+  private final int y;
 
   public Place(String name, int x, int y) {
     this.name = name;
