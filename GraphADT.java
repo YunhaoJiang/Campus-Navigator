@@ -121,5 +121,3 @@ public interface GraphADT<T> {
    * @return the number of vertices in the graph
    */
   public int getVertexCount();
-
-}
