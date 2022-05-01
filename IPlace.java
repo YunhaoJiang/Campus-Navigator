@@ -2,11 +2,7 @@
  * Instances of classes that implement this interface represents a place
  * that can be stored, sorted, and used with the accessors below.
  */
-<<<<<<< HEAD
 public interface IPlace {
-=======
-public interface IPlace {
->>>>>>> main
     /**
      * constructor args
      * Place(String name, double latitude, double longitude)
