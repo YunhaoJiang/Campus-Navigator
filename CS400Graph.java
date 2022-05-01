@@ -1,23 +1,17 @@
-
-// --=400 Dijkstra's Shortest Path Algorithm Activity File Header ==--
-// Name: Danny Jiang
-// CSL Username: danny
-// Email: cjiang88@wisc.edu
-// Lecture #: 002
-
-
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.NoSuchElementException;
+// --== CS400 File Header Information ==--
+// Name: Yunhao Jiang
+// Email: jiang297@wisc.edu
+// Team: BU
+// TA: Mohit
+// Lecturer: Gary Dahl
+// Notes to Grader: <optional extra notes>
+import java.util.*;
 
 public class CS400Graph<T> implements GraphADT<T> {
 
   /**
-   * Vertex objects group a data field with an adjacency list of weighted directed edges that lead
-   * away from them.
+   * Vertex objects group a data field with an adjacency list of weighted
+   * directed edges that lead away from them.
    */
   protected class Vertex {
     public T data; // vertex label or application specific data
@@ -29,9 +23,10 @@ public class CS400Graph<T> implements GraphADT<T> {
     }
   }
 
+
   /**
-   * Edge objects are stored within their source vertex, and group together their target destination
-   * vertex, along with an integer weight.
+   * Edge objects are stored within their source vertex, and group together
+   * their target destination vertex, along with an integer weight.
    */
   protected class Edge {
     public Vertex target;
@@ -43,7 +38,8 @@ public class CS400Graph<T> implements GraphADT<T> {
     }
   }
 
-  protected Hashtable<T, Vertex> vertices; // holds graph verticies, key=data
+
+  protected Hashtable<T, Vertex> vertices; // holds graph vertices, key=data
 
   public CS400Graph() {
     vertices = new Hashtable<>();
@@ -51,9 +47,10 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Insert a new vertex into the graph.
-   * 
+   *
    * @param data the data item stored in the new vertex
-   * @return true if the data can be inserted as a new vertex, false if it is already in the graph
+   * @return true if the data can be inserted as a new vertex, false if it is
+   * already in the graph
    * @throws NullPointerException if data is null
    */
   public boolean insertVertex(T data) {
@@ -66,9 +63,10 @@ public class CS400Graph<T> implements GraphADT<T> {
   }
 
   /**
-   * Remove a vertex from the graph. Also removes all edges adjacent to the vertex from the graph
-   * (all edges that have the vertex as a source or a destination vertex).
-   * 
+   * Remove a vertex from the graph.
+   * Also removes all edges adjacent to the vertex from the graph (all edges
+   * that have the vertex as a source or a destination vertex).
+   *
    * @param data the data item stored in the vertex to remove
    * @return true if a vertex with *data* has been removed, false if it was not in the graph
    * @throws NullPointerException if data is null
@@ -95,14 +93,14 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Insert a new directed edge with a positive edge weight into the graph.
-   * 
+   *
    * @param source the data item contained in the source vertex for the edge
    * @param target the data item contained in the target vertex for the edge
    * @param weight the weight for the edge (has to be a positive integer)
-   * @return true if the edge could be inserted or its weight updated, false if the edge with the
-   *         same weight was already in the graph
-   * @throws IllegalArgumentException if either source or target or both are not in the graph, or if
-   *                                  its weight is < 0
+   * @return true if the edge could be inserted or its weight updated, false
+   * if the edge with the same weight was already in the graph
+   * @throws IllegalArgumentException if either source or target or both are not in the graph,
+   *                                  or if its weight is < 0
    * @throws NullPointerException     if either source or target or both are null
    */
   public boolean insertEdge(T source, T target, int weight) {
@@ -130,7 +128,7 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Remove an edge from the graph.
-   * 
+   *
    * @param source the data item contained in the source vertex for the edge
    * @param target the data item contained in the target vertex for the edge
    * @return true if the edge could be removed, false if it was not in the graph
@@ -158,7 +156,7 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Check if the graph contains a vertex with data item *data*.
-   * 
+   *
    * @param data the data item to check for
    * @return true if data item is stored in a vertex of the graph, false otherwise
    * @throws NullPointerException if *data* is null
@@ -171,7 +169,7 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Check if edge is in the graph.
-   * 
+   *
    * @param source the data item contained in the source vertex for the edge
    * @param target the data item contained in the target vertex for the edge
    * @return true if the edge is in the graph, false if it is not in the graph
@@ -192,12 +190,11 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Return the weight of an edge.
-   * 
+   *
    * @param source the data item contained in the source vertex for the edge
    * @param target the data item contained in the target vertex for the edge
    * @return the weight of the edge (0 or positive integer)
-   * @throws IllegalArgumentException if either sourceVertex or targetVertex or both are not in the
-   *                                  graph
+   * @throws IllegalArgumentException if either sourceVertex or targetVertex or both are not in the graph
    * @throws NullPointerException     if either sourceVertex or targetVertex or both are null
    * @throws NoSuchElementException   if edge is not in the graph
    */
@@ -217,7 +214,7 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Return the number of edges in the graph.
-   * 
+   *
    * @return the number of edges in the graph
    */
   public int getEdgeCount() {
@@ -229,7 +226,7 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Return the number of vertices in the graph
-   * 
+   *
    * @return the number of vertices in the graph
    */
   public int getVertexCount() {
@@ -238,7 +235,7 @@ public class CS400Graph<T> implements GraphADT<T> {
 
   /**
    * Check if the graph is empty (does not contain any vertices or edges).
-   * 
+   *
    * @return true if the graph does not contain any vertices or edges, false otherwise
    */
   public boolean isEmpty() {
@@ -246,11 +243,12 @@ public class CS400Graph<T> implements GraphADT<T> {
   }
 
   /**
-   * Path objects store a discovered path of vertices and the overal distance of cost of the
-   * weighted directed edges along this path. Path objects can be copied and extended to include new
-   * edges and verticies using the extend constructor. In comparison to a predecessor table which is
-   * sometimes used to implement Dijkstra's algorithm, this eliminates the need for tracing paths
-   * backwards from the destination vertex to the starting vertex at the end of the algorithm.
+   * Path objects store a discovered path of vertices and the overal distance of cost
+   * of the weighted directed edges along this path. Path objects can be copied and extended
+   * to include new edges and verticies using the extend constructor. In comparison to a
+   * predecessor table which is sometimes used to implement Dijkstra's algorithm, this
+   * eliminates the need for tracing paths backwards from the destination vertex to the
+   * starting vertex at the end of the algorithm.
    */
   protected class Path implements Comparable<Path> {
     public Vertex start; // first vertex within path
@@ -259,9 +257,9 @@ public class CS400Graph<T> implements GraphADT<T> {
     public Vertex end; // last vertex within path
 
     /**
-     * Creates a new path containing a single vertex. Since this vertex is both the start and end of
-     * the path, it's initial distance is zero.
-     * 
+     * Creates a new path containing a single vertex.  Since this vertex is both
+     * the start and end of the path, it's initial distance is zero.
+     *
      * @param start is the first vertex on this path
      */
     public Path(Vertex start) {
@@ -273,33 +271,30 @@ public class CS400Graph<T> implements GraphADT<T> {
     }
 
     /**
-     * This extension constructor makes a copy of the path passed into it as an argument without
-     * affecting the original path object (copyPath). The path is then extended by the Edge object
-     * extendBy.
-     * 
+     * This extension constructor makes a copy of the path passed into it as an argument
+     * without affecting the original path object (copyPath). The path is then extended
+     * by the Edge object extendBy.
+     *
      * @param copyPath is the path that is being copied
      * @param extendBy is the edge the copied path is extended by
      */
     public Path(Path copyPath, Edge extendBy) {
       this.start = copyPath.start;
       this.distance = copyPath.distance + extendBy.weight;
+      this.dataSequence = new LinkedList<>(copyPath.dataSequence);
+      this.dataSequence.add(extendBy.target.data);
       this.end = extendBy.target;
-      List<T> temp = new ArrayList<T>();
-      for (T a : copyPath.dataSequence) {
-        temp.add(a);
-      }
-      temp.add(extendBy.target.data);
-      this.dataSequence = temp;
+      // TODO: Implement this constructor in Step 5.
     }
 
     /**
-     * Allows the natural ordering of paths to be increasing with path distance. When path distance
-     * is equal, the string comparison of end vertex data is used to break ties.
-     * 
+     * Allows the natural ordering of paths to be increasing with path distance.
+     * When path distance is equal, the string comparison of end vertex data is used to break ties.
+     *
      * @param other is the other path that is being compared to this one
-     * @return -1 when this path has a smaller distance than the other, +1 when this path has a
-     *         larger distance that the other, and the comparison of end vertex data in string form
-     *         when these distances are tied
+     * @return -1 when this path has a smaller distance than the other,
+     * +1 when this path has a larger distance that the other,
+     * and the comparison of end vertex data in string form when these distances are tied
      */
     public int compareTo(Path other) {
       int cmp = this.distance - other.distance;
@@ -312,115 +307,86 @@ public class CS400Graph<T> implements GraphADT<T> {
   }
 
   /**
-   * Uses Dijkstra's shortest path algorithm to find and return the shortest path between two
-   * vertices in this graph: start and end. This path contains an ordered list of the data within
-   * each node on this path, and also the distance or cost of all edges that are a part of this
-   * path.
-   * 
+   * Uses Dijkstra's shortest path algorithm to find and return the shortest path
+   * between two vertices in this graph: start and end. This path contains an ordered list
+   * of the data within each node on this path, and also the distance or cost of all edges
+   * that are a part of this path.
+   *
    * @param start data item within first node in path
    * @param end   data item within last node in path
    * @return the shortest path from start to end, as computed by Dijkstra's algorithm
-   * @throws NoSuchElementException when no path from start to end can be found, including when no
-   *                                vertex containing start or end can be found
+   * @throws NoSuchElementException when no path from start to end can be found,
+   *                                including when no vertex containing start or end can be found
    */
   protected Path dijkstrasShortestPath(T start, T end) {
-    // If either of start or end or both are not in the graph, then throw a NoSuchElementException
-    if (!vertices.containsKey(start) || !vertices.containsKey(end)) {
-      throw new NoSuchElementException("Vertex / vertices cannot be found within the graph");
-    }
-    // If the start and end are the same, then just return a path containing the vertex itself
-    if (start.equals(end)) {
-      return new Path(this.vertices.get(start));
-    }
+    PriorityQueue<Path> queue = new PriorityQueue<>();
+    ArrayList<Vertex> visited = new ArrayList<>();
 
-    // Creates a Hashtable for all of the vertices visited (key) and the best path to reach it 'so
-    // far' (value)
-    Hashtable<T, Path> pathSoFar = new Hashtable<T, Path>();
-
-    // Creates a PriorityQueue that sorts all of the paths that will be analyzed
-    PriorityQueue<Path> pathQ = new PriorityQueue<Path>();
-
-    // Base Case: Starting node is the current vertex
-    Vertex currentV = this.vertices.get(start);
-
-    // Adds the starting node to the Hashtable since it has been visited
-    pathSoFar.put(start, new Path(this.vertices.get(start)));
-
-    // Creates a path for each edge coming out of the current vertex and adds the path to the
-    // PriorityQueue
-    for (Edge e : currentV.edgesLeaving) {
-      Path path = new Path(new Path(this.vertices.get(start)), e);
-      pathQ.add(path);
+    // Check null and non-exist start and null
+    if (start == null || end == null || !this.containsVertex(start) || !this.containsVertex(end)) {
+      throw new NoSuchElementException("No path from start to end can be found");
     }
 
-    // While the PriorityQueue is not empty
-    while (!pathQ.isEmpty()) {
-      // Path to the vertex with the lowest cost so far
-      Path current = pathQ.remove();
+    // Initial Environment Set Up
+    Vertex startVertex = this.vertices.get(start);
+    Path shortestPath = new Path(startVertex);
+    visited.add(startVertex); // first vertex is always visited
+    queue.add(shortestPath);
+    boolean found = false;
 
-      // Checks if there is another path that leads to that node that is already explored
-      if (!pathSoFar.containsKey(current.end.data)) {
-        // If not, add this path to the Hashtable and now it counts as having been visited
-        pathSoFar.put(current.end.data, current);
-      } else {
-        // If it has been visited, check if the current path is better than the store path
-        if (current.compareTo(pathSoFar.get(current.end.data)) < 0) {
-          // If it is, then remove the stored path
-          pathSoFar.remove(current.end.data);
-          // Add the current path as the new and improved path
-          pathSoFar.put(current.end.data, current);
+    while (!found) {
+      // Get the shortest path from the queue
+      Path currentPath = queue.remove();
+      for (Edge edge : currentPath.end.edgesLeaving) {
+        if (!visited.contains(edge.target)) {
+          Path possiblePath =
+              new Path(shortestPath, edge); // Extend the path with all possible edges
+          queue.add(possiblePath);
         }
       }
 
-      // Recursive part
-      // Recursive current vertex is the vertex that is being analyzed right now
-      Vertex recursive_CurrentV = current.end;
+      // Check non-exist path (queue is empty but not found)
+      if (queue.isEmpty()) {
+        throw new NoSuchElementException("No path from start to end can be found");
+      }
 
-      // For each edge coming out of this vertex
-      for (Edge e : recursive_CurrentV.edgesLeaving) {
-        // Checks if the other end of the edge has already been visited
-        if (!pathSoFar.containsKey(e.target.data)) {
-          // If not, extend the current path to that vertex and add it to the priority queue for it
-          // to be analyzed later
-          Path path = new Path(current, e);
-          pathQ.add(path);
-        }
+      // Save the shortest path
+      shortestPath = queue.peek();
+      visited.add(shortestPath.end);
+
+      // Check if the end is reached
+      if (shortestPath.end.data.equals(end)) {
+        found = true;
       }
     }
-    // In the end, if there exists a path from start to end, return it
-    if (pathSoFar.containsKey(end)) {
-      return pathSoFar.get(end);
-    } else {
-      // Otherwise throw a NoSuchElementException
-      throw new NoSuchElementException("No path exists between the vertices");
-    }
+    return shortestPath;
   }
 
   /**
-   * Returns the shortest path between start and end. Uses Dijkstra's shortest path algorithm to
-   * find the shortest path.
-   * 
+   * Returns the shortest path between start and end.
+   * Uses Dijkstra's shortest path algorithm to find the shortest path.
+   *
    * @param start the data item in the starting vertex for the path
    * @param end   the data item in the destination vertex for the path
-   * @return list of data item in vertices in order on the shortest path between vertex with data
-   *         item start and vertex with data item end, including both start and end
-   * @throws NoSuchElementException when no path from start to end can be found including when no
-   *                                vertex containing start or end can be found
+   * @return list of data item in vertices in order on the shortest path between vertex
+   * with data item start and vertex with data item end, including both start and end
+   * @throws NoSuchElementException when no path from start to end can be found
+   *                                including when no vertex containing start or end can be found
    */
   public List<T> shortestPath(T start, T end) {
     return dijkstrasShortestPath(start, end).dataSequence;
   }
 
   /**
-   * Returns the cost of the path (sum over edge weights) between start and end. Uses Dijkstra's
-   * shortest path algorithm to find the shortest path.
-   * 
+   * Returns the cost of the path (sum over edge weights) between start and end.
+   * Uses Dijkstra's shortest path algorithm to find the shortest path..
+   *
    * @param start the data item in the starting vertex for the path
    * @param end   the data item in the end vertex for the path
-   * @return the cost of the shortest path between vertex with data item start and vertex with data
-   *         item end, including all edges between start and end
-   * @throws NoSuchElementException when no path from start to end can be found including when no
-   *                                vertex containing start or end can be found
+   * @return the cost of the shortest path between vertex with data item start
+   * and vertex with data item end, including all edges between start and end
+   * @throws NoSuchElementException when no path from start to end can be found
+   *                                including when no vertex containing start or end can be found
    */
   public int getPathCost(T start, T end) {
     return dijkstrasShortestPath(start, end).distance;
