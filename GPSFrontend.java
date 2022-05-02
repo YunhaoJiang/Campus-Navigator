@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
+
 /**
  * Frontend of the application of GPS for the UW Madison Campus. Involves a GUI
  * interface that allows the user to insert new locations as well as navigate
@@ -370,6 +371,8 @@ public class GPSFrontend extends Application implements IGPSFrontend {
     for (Button b : createButtons()) {
       group.getChildren().add(b);
     }
+
+    stage.getIcons().add(new Image("file:icon.png"));
     stage.show();
   }
 
