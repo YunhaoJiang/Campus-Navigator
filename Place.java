@@ -1,3 +1,10 @@
+// --== CS400 Project three W3 ==--
+// Name: Sangho Jeon
+// Role: Data Wrangler
+// CSL Username: sangho
+// Email: sjeon36@wisc.edu
+// Lecture #: 002 @1:00pm
+
 public class Place implements IPlace{
   private final String name;
   private final int x;

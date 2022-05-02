@@ -1,9 +1,13 @@
-import java.io.*;
+// --== CS400 Project three W3 ==--
+// Name: Sangho Jeon
+// Role: Data Wrangler
+// CSL Username: sangho
+// Email: sjeon36@wisc.edu
+// Lecture #: 002 @1:00pm
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
