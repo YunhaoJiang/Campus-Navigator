@@ -123,6 +123,7 @@ public class CS400Graph<T> implements GraphADT<T> {
       }
     // otherwise add new edge to sourceVertex
     sourceVertex.edgesLeaving.add(new Edge(targetVertex, weight));
+    System.out.println("Connecting[Manual]: " + sourceVertex.data + " to " + targetVertex.data);
     return true;
   }
 
@@ -149,6 +150,7 @@ public class CS400Graph<T> implements GraphADT<T> {
         removeEdge = e;
     if (removeEdge != null) { // remove edge that is successfully found
       sourceVertex.edgesLeaving.remove(removeEdge);
+      System.out.println("Removing: " + sourceVertex.data + " to " + targetVertex.data);
       return true;
     }
     return false; // otherwise return false to indicate failure to find

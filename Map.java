@@ -38,7 +38,7 @@ public class Map extends CS400Graph<IPlace> implements IGPSAlgorithm {
       if (!checkIntersection(currentVertex, toConnect)) {
         currentVertex.edgesLeaving.add(
             new Edge(toConnect, calculateWeight(place, currentVertex.data)));
-        System.out.println("Connecting" + currentVertex.data.getName() + " and " + toConnect.data.getName());
+        System.out.println("Connecting: " + currentVertex.data.getName() + " and " + toConnect.data.getName());
       }
 
     }

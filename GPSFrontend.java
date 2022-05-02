@@ -152,9 +152,6 @@ public class GPSFrontend extends Application implements IGPSFrontend {
   public void buttonClicked(Button button, IPlace place) {
     if (this.selectMode) {
       // Creates a button that says "Start Navigation
-      for (int i = 0; i < currLines.size(); i++) {
-        group.getChildren().remove(currLines.get(i));
-      }
 
       Button submitButton = new Button("Start Navigation");
       // Adjusts the fonts
@@ -180,8 +177,7 @@ public class GPSFrontend extends Application implements IGPSFrontend {
               if (toRemoveName.equals("Carson's Market") || toRemoveName.equals("Liz's " + "Market")
                   || toRemoveName.equals("Four Lakes Market") || toRemoveName.equals(
                   "Memorial Union")) {
-                toRemove.setStyle(
-                    "-fx-background-radius: 12px;" + "-fx-background-color: green;");
+                toRemove.setStyle("-fx-background-radius: 12px;" + "-fx-background-color: green;");
               } else {
                 toRemove.setStyle("-fx-background-radius: 12px;" + "-fx-background-color: yellow;");
               }
@@ -294,7 +290,12 @@ public class GPSFrontend extends Application implements IGPSFrontend {
     Button navigate = new Button("Navigate");
     navigate.setFont(new Font("Arial", 20));
     // When clicked, the selectMode becomes true
-    navigate.setOnAction(e -> this.selectMode = true);
+    navigate.setOnAction(e -> {
+      this.selectMode = true;
+      for (Line currLine : currLines) {
+        group.getChildren().remove(currLine);
+      }
+    });
     navigate.setMinSize(100, 20);
     navigate.setLayoutX(250);
     navigate.setLayoutY(65);
@@ -314,6 +315,9 @@ public class GPSFrontend extends Application implements IGPSFrontend {
     add.setOnAction(e -> {
       // If insertMode is true
       this.insertMode = true;
+      for (Line currLine : currLines) {
+        group.getChildren().remove(currLine);
+      }
       // Creates a label with prompt that asks the user to enter the name of the new
       // location
       Label enterNamePrompt = new Label("Enter the name for the new location: ");
@@ -361,7 +365,7 @@ public class GPSFrontend extends Application implements IGPSFrontend {
     group.getChildren().add(or);
     group.getChildren().add(add);
 
-    System.out.println("Creating Buttons");
+    // System.out.println("Creating Buttons");
     // Adds all the buttons that represent the places
     for (Button b : createButtons()) {
       group.getChildren().add(b);

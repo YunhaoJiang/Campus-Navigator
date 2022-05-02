@@ -30,4 +30,9 @@ public class Place implements IPlace{
   public int getY() {
     return this.y;
   }
+
+  @Override
+  public String toString() {
+    return this.name;
+  }
 }

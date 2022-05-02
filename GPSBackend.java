@@ -61,8 +61,6 @@ public class GPSBackend implements IGPSBackend {
   }
 
   public List<IPlace> getAllPlaces() {
-    System.out.println("getAllPlaces");
-    System.out.println("current map size: " + map.vertices.keySet().size());
     ArrayList<IPlace> result = new ArrayList<>();
     for (Map.Vertex vertex : map.vertices.values()) {
       result.add(vertex.data);
@@ -112,8 +110,8 @@ public class GPSBackend implements IGPSBackend {
     this.map.removeEdge(places.get(4), places.get(6));
 
     this.map.automaticInsertEdge(places.get(11));
-    this.map.removeEdge(places.get(10), places.get(11));
-    this.map.insertEdge(places.get(4), places.get(11),
-        map.calculateWeight(places.get(4), places.get(11)));
+    this.map.removeEdge(places.get(9), places.get(11));
+    this.map.insertEdge(places.get(2), places.get(11),
+        map.calculateWeight(places.get(2), places.get(11)));
   }
 }
