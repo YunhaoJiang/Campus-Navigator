@@ -1,9 +1,16 @@
 {
   "places": [
-    {"name": "Four Lakes Market", "x": 0.11768, "y": 0.15520},
     {"name": "Carson's Market", "x": 0.35303, "y": 0.19906},
     {"name": "Liz's Market", "x": 0.51873, "y": 0.22605},
-    {"name": "Rheta's Market", "x": 0.71806, "y": 0.43522},
-    {"name": "Gordon's Dining Hall", "x": 0.83093, "y": 0.62416}
+    {"name": "Human Ecology", "x":  0.44875, "y": 0.32658},
+    {"name": "Four Lakes Market", "x": 0.11768, "y": 0.15520},
+    {"name": "Babcock Diary", "x": 0.28365, "y": 0.37838},
+    {"name": "Memorial Union", "x": 0.78526, "y": 0.26351},
+    {"name": "Chadbourne", "x": 0.71806, "y": 0.43522},
+    {"name": "Veterinary Care", "x": 0.08013, "y": 0.33108},
+    {"name": "Hub Madison", "x": 0.95513, "y": 0.38514},
+    {"name": "Camp Randall", "x": 0.32051, "y": 0.72072},
+    {"name": "Kohl Center", "x": 0.90224, "y": 0.75901},
+    {"name": "Union South", "x": 0.46795, "y": 0.49550}
   ]
 }

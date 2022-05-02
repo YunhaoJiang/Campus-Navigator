@@ -35,7 +35,7 @@ public interface GraphADT<T> {
    * @param weight the weight for the edge (has to be a positive integer)
    * @return true if the edge could be inserted or its weight updated, false if the edge with the same weight was already in the graph with the graph
    * @throws IllegalArgumentException if either sourceVertex or targetVertex or both are not in the graph, or weight is < 0
-   * @throws NullPointerException if either sourceVertex or targetVertex or both are null
+   * @throws NullPointerException     if either sourceVertex or targetVertex or both are null
    */
   public boolean insertEdge(T source, T target, int weight);
 
@@ -46,7 +46,7 @@ public interface GraphADT<T> {
    * @param target the data item contained in the target vertex for the edge
    * @return true if the edge could be removed, false if it was not in the graph
    * @throws IllegalArgumentException if either sourceVertex or targetVertex or both are not in the graph
-   * @throws NullPointerException if either sourceVertex or targetVertex or both are null
+   * @throws NullPointerException     if either sourceVertex or targetVertex or both are null
    */
   public boolean removeEdge(T source, T target);
 
@@ -76,8 +76,8 @@ public interface GraphADT<T> {
    * @param target the data item contained in the target vertex for the edge
    * @return the weight of the edge (0 or positive integer)
    * @throws IllegalArgumentException if either sourceVertex or targetVertex or both are not in the graph
-   * @throws NullPointerException if either sourceVertex or targetVertex or both are null
-   * @throws NoSuchElementException if edge is not in the graph
+   * @throws NullPointerException     if either sourceVertex or targetVertex or both are null
+   * @throws NoSuchElementException   if edge is not in the graph
    */
   public int getWeight(T source, T target);
 
@@ -86,7 +86,7 @@ public interface GraphADT<T> {
    * Uses Dijkstra's shortest path algorithm to find the shortest path.
    *
    * @param start the data item in the starting vertex for the path
-   * @param end the data item in the destination vertex for the path
+   * @param end   the data item in the destination vertex for the path
    * @return list of data item in vertices in order on the shortest path between vertex with data item startingVertex and vertex with data item destinationVertex, including both startingVertex and destinationVertex
    */
   public List<T> shortestPath(T start, T end);
@@ -96,7 +96,7 @@ public interface GraphADT<T> {
    * Uses Dijkstra's shortest path algorithm to find the shortest path.
    *
    * @param start the data item in the starting vertex for the path
-   * @param end the data item in the destination vertex for the path
+   * @param end   the data item in the destination vertex for the path
    * @return the cost of the shortest path between vertex with data item startingVertex and vertex with data item destinationVertex, including both startingVertex and destinationVertex
    */
   public int getPathCost(T start, T end);
@@ -121,3 +121,5 @@ public interface GraphADT<T> {
    * @return the number of vertices in the graph
    */
   public int getVertexCount();
+
+}

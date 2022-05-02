@@ -10,12 +10,7 @@ public class BDPHPlace implements IPlace{
     	this.latitude = latitude;
     	this.longitude = longitude;
     }
-    
-	@Override
-	public int compareTo(IPlace o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 
 	@Override
 	public String getName() {
