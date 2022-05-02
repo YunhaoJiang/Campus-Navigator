@@ -15,8 +15,7 @@ runBackendDeveloperTests:
 	java -jar junit5.jar --class-path . --scan-classpath -n BackendDeveloperTests
 
 runFrontendDeveloperTests:
-	javac -cp .:junit5.jar FrontendDeveloperTests.java
-	java -jar junit5.jar --class-path . --scan-classpath -n FrontendDeveloperTests
-
+	javac --module-path javafx-sdk-17.0.2/lib --add-modules javafx.controls,javafx.fxml -cp .:junit5.jar:JavaFXTester.jar:json-simple-1.1.1.jar FrontendDeveloperTests.java
+	java --module-path javafx-sdk-17.0.2/lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED -jar junit5.jar -cp .:JavaFXTester.jar:json-simple-1.1.1.jar --scan-classpath
 clean:
 	rm *.class
