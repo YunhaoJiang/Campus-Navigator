@@ -1,4 +1,4 @@
-// --== CS400 Project three W3 ==--
+// --== CS400 Project three W4 ==--
 // Name: Mojtaba Javid
 // Role: BackEnd Developer
 // CSL Username: mojtaba
@@ -38,10 +38,10 @@ public class GPSBackend implements IGPSBackend {
     this.addPlace(place.data, place.edgesLeaving);
   }
 
-  //overloading method for add which takes an vertex as param
+  //overloading method for add which takes an place as param
+  //and automatically generates edges and weights for it
   public void addPlace(IPlace place) {
     this.map.automaticInsertEdge(place);
-    //System.out.println("addPlace, current map size: " + map.vertices.keySet().size());
   }
 
   /**

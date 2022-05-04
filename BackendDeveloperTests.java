@@ -1,4 +1,4 @@
-// --== CS400 Project three W3 ==--
+// --== CS400 Project three W4 ==--
 // Name: Mojtaba Javid
 // Role: BackEnd Developer
 // CSL Username: mojtaba
@@ -10,13 +10,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.LinkedList;
 import java.util.NoSuchElementException;
-/*
+
 public class BackendDeveloperTests {
 	GPSBackend backend = new GPSBackend();
 	BDPHGPSAlgorithm a = new BDPHGPSAlgorithm();
@@ -26,10 +22,10 @@ public class BackendDeveloperTests {
     IPlace D;
     IPlace E;
     IPlace F;
-    */
+    
     /**
      * Instantiate graph from last week's shortest path activity.
-     *//*
+     */
     @BeforeEach
     public void createGraph() {
     	
@@ -79,55 +75,50 @@ public class BackendDeveloperTests {
         a.insertEdge(F,A,1);
         a.insertEdge(F,D,1);
     }
-*/
+
     /**
      * Checks the Functionality of GPSAlgorithem through backend.
      */
-    /*
     @Test
     public void test1() {
         assertTrue(backend.map.getPathCost(C , E) == 4);
-    }*/
+    }
     
     /**
      * testing the functionality
      * of the first add method
      */
-    /*
 	@Test
     public void test2(){
         backend.addPlace(A, a.vertices.get(A).edgesLeaving);
         assertTrue(backend.map.getPathCost(A , E) == 6);
     }
-    */
+    
     /**
      * test method to confirm the functionality
      * of the first add method
      */
-    /*
 	@Test
     public void test3(){
 		backend.addPlace(A, a.vertices.get(A).edgesLeaving);
         assertTrue(backend.map.getPathCost(A , B) == 5);
     }
-    */
+    
 	/**
      * testing the functionality
      * of the second add method
      */
-  /*
 	@Test
     public void test4() {
 		backend.addPlace(A, a.vertices.get(A).edgesLeaving);
     	backend.addPlace(a.vertices.get(F));
         assertEquals(A, backend.map.shortestPath(F, B).get(1));
     }
-    */
+    
     /**
      * testing the functionality
      * of the shortest path method
      */
-    /*
     @Test
     public void test5() {
 		backend.addPlace(A, a.vertices.get(A).edgesLeaving);
@@ -142,12 +133,11 @@ public class BackendDeveloperTests {
     }
     
     
-    */
+    
     /**
      * additional test 1, testing the functionality
      * of the code when working with others code 
      */
-    /*
     @Test
     public void testA1() {
         backend.map.removeEdge(B, E);
@@ -160,12 +150,11 @@ public class BackendDeveloperTests {
 
           assertTrue(thrown); //no path
     }
-    */
+    
     /**
      * additional test 2, testing the functionality
      * of the code when working with others code 
      */
-    /*
     @Test
     public void testA2() {
     	backend.map.insertEdge(E,B,3);
@@ -175,12 +164,11 @@ public class BackendDeveloperTests {
     	assertTrue(backend.map.getPathCost(D , B) == 8);
         
     }
-    */
+    
     /**
      * additional test 3, testing the functionality
      * of the Algorithm Engineer's code 
      */
-    /*
     @Test
     public void testA3() {
     	assertTrue(a.dijkstrasShortestPath(F, B).distance == 6);
@@ -188,12 +176,11 @@ public class BackendDeveloperTests {
         a.removeEdge(B, E);
         assertTrue(a.dijkstrasShortestPath(C, E).distance == 5);
     }
-    */
+    
     /**
      * additional test 4, testing the functionality
      * of the Algorithm Engineer's code 
      */
-    /*
     @Test
     public void testA4() {
     	assertTrue(a.getPathCost(C , B) == 3);
@@ -202,6 +189,5 @@ public class BackendDeveloperTests {
     	assertTrue(a.getPathCost(C , B) == 8);
     	
     }
-
+    
 }
-*/
