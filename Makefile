@@ -16,6 +16,8 @@ runBackendDeveloperTests:
 
 runFrontendDeveloperTests:
 	javac --module-path ./lib --add-modules javafx.controls,javafx.fxml -cp .:junit5.jar:JavaFXTester.jar:json-simple-1.1.1.jar FrontendDeveloperTests.java
-	java --module-path ./lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED -jar junit5.jar -cp .:JavaFXTester.jar:json-simple-1.1.1.jar --scan-classpath
+	javac --module-path ./lib --add-modules javafx.controls,javafx.fxml -cp .:junit5.jar:JavaFXTester.jar:json-simple-1.1.1.jar PreIntegrationFrontendDeveloperTests.java
+	java --module-path ./lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED -jar junit5.jar -cp .:JavaFXTester.jar:json-simple-1.1.1.jar --scan-classpath -n PreIntegrationFrontendDeveloperTests
+	java --module-path ./lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED -jar junit5.jar -cp .:JavaFXTester.jar:json-simple-1.1.1.jar --scan-classpath -n FrontendDeveloperTests
 clean:
 	rm *.class
