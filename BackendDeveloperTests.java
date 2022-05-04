@@ -16,6 +16,7 @@ import java.util.NoSuchElementException;
 public class BackendDeveloperTests {
 	GPSBackend backend = new GPSBackend();
 	BDPHGPSAlgorithm a = new BDPHGPSAlgorithm();
+	Map m = new Map();
 	IPlace A;
     IPlace B;
     IPlace C;
@@ -48,20 +49,21 @@ public class BackendDeveloperTests {
         a.insertVertex(E);
         a.insertVertex(F);
         
-        // insert edges from Week 11. Shortest Path Activity
-       // backend.map.insertEdge(A,B,6);
-       // backend.map.insertEdge(A,C,2);
-        //backend.map.insertEdge(A,D,5);
+        m.insertVertex(A);
+        m.insertVertex(B);
+        m.insertVertex(C);
+        m.insertVertex(D);
+        m.insertVertex(E);
+        m.insertVertex(F);
+        
+       
        
         backend.map.insertEdge(B,E,1);
         backend.map.insertEdge(B,C,2);
         backend.map.insertEdge(C,B,3);
-        //backend.map.insertEdge(C,F,1);
         backend.map.insertEdge(D,E,3);
         
-        //backend.map.insertEdge(E,A,4);
-        //backend.map.insertEdge(F,A,1);
-        //backend.map.insertEdge(F,D,1);
+
         
         a.insertEdge(A,B,6);
         a.insertEdge(A,C,2);
@@ -74,6 +76,18 @@ public class BackendDeveloperTests {
         a.insertEdge(E,A,4);
         a.insertEdge(F,A,1);
         a.insertEdge(F,D,1);
+        
+        m.insertEdge(A,B,6);
+        m.insertEdge(A,C,2);
+        m.insertEdge(A,D,5);
+        m.insertEdge(B,E,1);
+        m.insertEdge(B,C,2);
+        m.insertEdge(C,B,3);
+        m.insertEdge(C,F,1);
+        m.insertEdge(D,E,3);
+        m.insertEdge(E,A,4);
+        m.insertEdge(F,A,1);
+        m.insertEdge(F,D,1);
     }
 
     /**
@@ -171,10 +185,13 @@ public class BackendDeveloperTests {
      */
     @Test
     public void testA3() {
-    	assertTrue(a.dijkstrasShortestPath(F, B).distance == 6);
-        assertTrue(a.dijkstrasShortestPath(C, E).distance == 4);
-        a.removeEdge(B, E);
-        assertTrue(a.dijkstrasShortestPath(C, E).distance == 5);
+    	assertTrue(m.dijkstrasShortestPath(F, B).distance == 6);
+    	assertTrue(m.calculateTime(F, B, 2) == 3);
+        assertTrue(m.dijkstrasShortestPath(C, E).distance == 4);
+        assertTrue(m.calculateTime(C, E, 4) == 1);
+        m.removeEdge(B, E);
+        assertTrue(m.dijkstrasShortestPath(C, E).distance == 5);
+        assertTrue(m.calculateTime(C, E, 5) == 1);
     }
     
     /**
@@ -183,10 +200,10 @@ public class BackendDeveloperTests {
      */
     @Test
     public void testA4() {
-    	assertTrue(a.getPathCost(C , B) == 3);
-    	a.removeEdge(C, B);
-    	a.insertEdge(E,B,3);
-    	assertTrue(a.getPathCost(C , B) == 8);
+    	assertTrue(m.getPathCost(C , B) == 3);
+    	m.removeEdge(C, B);
+    	m.insertEdge(E,B,3);
+    	assertTrue(m.getPathCost(C , B) == 8);
     	
     }
     
