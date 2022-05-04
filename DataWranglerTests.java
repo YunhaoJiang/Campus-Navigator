@@ -9,15 +9,8 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-import static java.util.Locale.lookup;
 import static org.junit.jupiter.api.Assertions.*;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import edu.wisc.cs.cs400.JavaFXTester;
 
 class DataWranglerTests {
 
