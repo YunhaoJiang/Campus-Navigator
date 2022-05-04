@@ -1,6 +1,6 @@
 run:
-	javac -cp .:json-simple-1.1.1.jar: --module-path javafx-sdk-17.0.2/lib --add-modules javafx.controls,javafx.fxml CampusGPSApp.java
-	java -cp .:json-simple-1.1.1.jar --module-path javafx-sdk-17.0.2/lib --add-modules javafx.controls,javafx.fxml CampusGPSApp
+	javac -cp .:json-simple-1.1.1.jar: --module-path ./lib --add-modules javafx.controls,javafx.fxml CampusGPSApp.java
+	java -cp .:json-simple-1.1.1.jar --module-path ./lib --add-modules javafx.controls,javafx.fxml CampusGPSApp
 
 runDataWranglerTests:
 	javac -cp .:junit5.jar:json-simple-1.1.1.jar DataWranglerTests.java
